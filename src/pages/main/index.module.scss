@@ -1,11 +1,30 @@
 
 .container {
-  display: inline-block;
+  display: block;
   background-color: red;
   width: 100%;
   // max-width: 1920px;
   height: 100%;
   // max-height: 1080px;
-  background-image: url(../../assets/background.png);
-  background: no-repeat url(../../assets/background.png);
+  // background-image: url(../../assets/background.png);
+  // background: no-repeat url(../../assets/background.png);
+  background-color: #000c3b;
+
+  .caption-title {
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    max-width: 900px;
+    height: 48px;
+    margin: 10px auto 0px;
+  }
+
+  .panel {
+    width: 200px;
+    height: 200px;
+  }
+
+  .panel-gradient {
+    width: 200px;
+    height: 200px;
+  }
 } 

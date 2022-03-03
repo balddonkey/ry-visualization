@@ -1,0 +1,47 @@
+
+$BorderColor: #26c6f0;
+
+.corner-border {
+  width: 20px;
+  height: 20px;
+}
+
+// top-left
+.tl {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid $BorderColor;
+  border-left: 2px solid $BorderColor;
+  position: absolute;
+  @extend .corner-border;
+}
+
+// top-right
+.tr {
+  top: -2px;
+  right: -2px;
+  border-top: 2px solid $BorderColor;
+  border-right: 2px solid $BorderColor;
+  position: absolute;
+  @extend .corner-border;
+}
+
+// bottom-left
+.bl {
+  bottom: -2px;
+  left: -2px;
+  border-bottom: 2px solid $BorderColor;
+  border-left: 2px solid $BorderColor;
+  position: absolute;
+  @extend .corner-border;
+}
+
+// bottom-right
+.br {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid $BorderColor;
+  border-right: 2px solid $BorderColor;
+  position: absolute;
+  @extend .corner-border;
+}

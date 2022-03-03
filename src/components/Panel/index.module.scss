@@ -1,0 +1,17 @@
+
+
+
+.container {
+  display: block;
+  position: relative;
+  // webkit-box-shadow: #07417a 0 0 10px;
+  // -moz-box-shadow: #07417a 0 0 10px;
+  box-shadow: inset 0 0 30px #07417a;
+  box-shadow: 0 0 10px #07417a, 
+  inset 0 0 30px #07417a;
+}
+
+.container-gradient-bg {
+  @extend .container;
+  background-image: radial-gradient(circle closest-side at 50% 50%,hsla(209,99%,32%,28),hsla(228,100%,0%,0));
+}
