@@ -44,7 +44,12 @@ const withScaleWrapper = (size) => {
       }, [])
 
       return (
-        <div className={styles['wrapper']} style={{width, height, transform: `scale(${scale})`, transformOrigin: "50% 0"}}>
+        <div className={styles['wrapper']} 
+          style={{
+            width: width * scale, height: height * scale, 
+            // transform: `scale(${scale})`, transformOrigin: "50% 0"
+          }}
+        >
           <WrappedComponent {...otherProps}/>
         </div>
       );

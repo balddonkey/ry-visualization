@@ -1,0 +1,31 @@
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    min-width: 40%;
+    min-height: 40px;
+    // background-color: lightpink;
+    margin: 10px;
+
+    .icon {
+      // width: 30px;
+      height: 30px;
+    }
+
+    .text {
+      color: white;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+  }
+}

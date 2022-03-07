@@ -4,32 +4,31 @@ import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, ReferenceLine, Refe
   Label, LabelList } from 'recharts';
 import style from './index.module.scss';
 
-const data = [
-  { name: 'Page A', uv: 300, pv: 2600, amt: 3400 },
-  { name: 'Page B', uv: 400, pv: 4367, amt: 6400 },
-  { name: 'Page C', uv: 300, pv: 1398, amt: 2400 },
-  { name: 'Page D', uv: 200, pv: 9800, amt: 2400 },
-  { name: 'Page E', uv: 278, pv: 3908, amt: 2400 },
-  { name: 'Page F', uv: 189, pv: 4800, amt: 2400 },
-  { name: 'Page G', uv: 189, pv: 4800, amt: 2400 },
-];
-
 const Chart = (props) => {
   const onChartReadyCallback = useCallback((p) => {
     console.log('callback:', p);
   }, [])
+  const { data = [], legend } = props;
   return (
-    <ResponsiveContainer 
-    className={style['line-chart']}>
+    <ResponsiveContainer className={style['line-chart']} width='100%' height='100%'>
       <LineChart
+        width={400}
+        height={300}
         data={data}
-        margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
       >
         <XAxis dataKey="name" />
+        <YAxis dataKey="v"/>
         <Tooltip />
+        <Legend formatter={(p) => legend || "No legend"}/>
         {/* <CartesianGrid stroke="#f5f5f5" /> */}
-        <Line type="monotone" dataKey="uv" stroke="#ff7300" yAxisId={0} />
-        <Line type="monotone" dataKey="pv" stroke="#387908" yAxisId={1} />
+        <Line type="monotone" dataKey="v" stroke="#ff7300" yAxisId={0}>
+          <LabelList position="top" offset={10} dataKey="v" color='white' className='label-list'
+            // content={ <div>呵呵呵</div>}
+            fill='white'
+            fontSize={11}
+            formatter={data.labelFormat}
+          />
+        </Line>
       </LineChart>
     </ResponsiveContainer>
   )
